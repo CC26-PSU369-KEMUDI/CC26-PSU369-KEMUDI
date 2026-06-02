@@ -4,6 +4,18 @@ import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
 
+# =========================
+# PAGE CONFIG
+# =========================
+
+st.set_page_config(
+    page_title="KEMUDI - Data Science Dashboard",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+ASSET_DIR = Path("streamlit_assets")
+
 # ========== KODE DEBUG (TAMBAHKAN INI) ==========
 st.write("### 🔍 DEBUG INFO - JANGAN PANIK, INI HANYA CEK FILE")
 
@@ -40,18 +52,6 @@ else:
 st.write("### 🔍 END DEBUG")
 st.markdown("---")
 # ========== AKHIR KODE DEBUG ==========
-
-# =========================
-# PAGE CONFIG
-# =========================
-
-st.set_page_config(
-    page_title="KEMUDI - Data Science Dashboard",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
-ASSET_DIR = Path("streamlit_assets")
 
 # =========================
 # GLOBAL CSS STYLING
