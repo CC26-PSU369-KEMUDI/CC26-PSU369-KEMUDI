@@ -42,7 +42,9 @@ ai_engineer/
 │   ├── drowsiness.db
 │   └── eye_model_22mei.keras
 │
-├── logs/
+├── logs/fit/20260522-173637
+│   ├── train/
+│   └── val/
 │
 ├── url api testing/
 │   ├── eye.png
