@@ -1,0 +1,108 @@
+nohup: ignoring input
+INFO:     Will watch for changes in these directories: ['/home/hns13/VpsDeploy/KEMUDI-Sistem-Pemantauan-Kantuk-Pengemudi/backend']
+/home/hns13/VpsDeploy/KEMUDI-Sistem-Pemantauan-Kantuk-Pengemudi/backend/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:386: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1780387335.184528 1228858 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1780387335.250798 1228858 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1780387335.656487 1228858 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1780387335.656953 1228858 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1780387335.656961 1228858 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1780387335.656966 1228858 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1780387357.657964 1228961 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1780387357.786856 1228959 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [1228858] using StatReload
+/home/hns13/VpsDeploy/KEMUDI-Sistem-Pemantauan-Kantuk-Pengemudi/backend/.venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:386: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1780387362.421288 1228965 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1780387362.552245 1228965 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1780387362.698888 1228965 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1780387362.699008 1228965 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1780387362.699017 1228965 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1780387362.699024 1228965 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1780387369.672859 1229050 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+INFO:     Started server process [1228965]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+W0000 00:00:1780387369.912099 1229049 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+INFO:     103.106.72.251:40760 - "GET / HTTP/1.1" 200 OK
+INFO:     103.106.72.251:40762 - "PUT /update-summary/ HTTP/1.1" 307 Temporary Redirect
+20
+INFO:     103.106.72.251:40762 - "PUT /update-summary HTTP/1.1" 200 OK
+INFO:     103.106.72.251:40788 - "GET /dashboard-history HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:40790 - "GET /dashboard-history HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:40762 - "GET /dashboard-history HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:40790 - "GET /dashboard-history HTTP/1.1" 200 OK
+INFO:     103.106.72.251:40813 - "PUT /update-summary/ HTTP/1.1" 307 Temporary Redirect
+20
+INFO:     103.106.72.251:40814 - "GET /dashboard-history HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:40813 - "GET /dashboard-history HTTP/1.1" 200 OK
+INFO:     103.106.72.251:40814 - "PUT /update-summary HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:40815 - "GET /dashboard-history HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:40813 - "GET /dashboard-history HTTP/1.1" 200 OK
+INFO:     65.49.1.122:53520 - "GET / HTTP/1.1" 200 OK
+INFO:     65.49.1.126:64105 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     103.106.72.251:40997 - "OPTIONS /update-summary/ HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:40998 - "GET /dashboard-history HTTP/1.1" 200 OK
+INFO:     103.106.72.251:41002 - "PUT /update-summary/ HTTP/1.1" 307 Temporary Redirect
+INFO:     103.106.72.251:40997 - "OPTIONS /update-summary HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:41002 - "GET /dashboard-history HTTP/1.1" 200 OK
+INFO:     103.106.72.251:40998 - "PUT /update-summary HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:41004 - "GET /dashboard-history HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:41002 - "GET /dashboard-history HTTP/1.1" 200 OK
+INFO:     65.49.1.128:54021 - "GET http%3A//api.ipify.org/?format=json HTTP/1.1" 404 Not Found
+INFO:     65.49.1.127:10389 - "CONNECT www.shadowserver.org%3A443 HTTP/1.1" 404 Not Found
+INFO:     103.106.72.251:55378 - "OPTIONS /login HTTP/1.1" 200 OK
+INFO:     103.106.72.251:60436 - "POST /login HTTP/1.1" 200 OK
+INFO:     103.106.72.251:51278 - "POST /login HTTP/1.1" 200 OK
+INFO:     103.106.72.251:61820 - "OPTIONS /update-summary/ HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:52029 - "PUT /update-summary/ HTTP/1.1" 307 Temporary Redirect
+INFO:     103.106.72.251:62632 - "GET /dashboard-history HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:60270 - "GET /dashboard-history HTTP/1.1" 200 OK
+INFO:     103.106.72.251:57324 - "OPTIONS /update-summary HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:62632 - "GET /dashboard-history HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:60270 - "PUT /update-summary HTTP/1.1" 200 OK
+INFO:     103.106.72.251:52029 - "GET /dashboard-history HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:63562 - "GET /dashboard-history HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:61449 - "GET /dashboard-history HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:63562 - "GET /dashboard-history HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:52411 - "GET /dashboard-history HTTP/1.1" 200 OK
+INFO:     103.106.72.251:42165 - "OPTIONS /update-summary/ HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:42167 - "GET /dashboard-history HTTP/1.1" 200 OK
+INFO:     103.106.72.251:42170 - "PUT /update-summary/ HTTP/1.1" 307 Temporary Redirect
+20
+INFO:     103.106.72.251:42165 - "OPTIONS /update-summary HTTP/1.1" 200 OK
+INFO:     103.106.72.251:42171 - "GET /dashboard-history HTTP/1.1" 200 OK
+INFO:     103.106.72.251:42170 - "PUT /update-summary HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:42167 - "GET /dashboard-history HTTP/1.1" 200 OK
+20
+INFO:     103.106.72.251:42171 - "GET /dashboard-history HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.

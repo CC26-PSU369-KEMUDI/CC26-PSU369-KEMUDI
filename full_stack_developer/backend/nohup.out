@@ -1,0 +1,30 @@
+/usr/bin/python3: No module named uvicorn
+/usr/bin/python3: No module named uvicorn
+npm warn Unknown cli config "--host". This will stop working in the next major version of npm.
+npm error code ENOENT
+npm error syscall open
+npm error path /home/hns13/VpsDeploy/KEMUDI-Sistem-Pemantauan-Kantuk-Pengemudi/backend/package.json
+npm error errno -2
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/hns13/VpsDeploy/KEMUDI-Sistem-Pemantauan-Kantuk-Pengemudi/backend/package.json'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /home/hns13/.npm/_logs/2026-06-02T02_21_01_149Z-debug-0.log
+/usr/bin/python3: No module named uvicorn
+npm warn Unknown cli config "--host". This will stop working in the next major version of npm.
+npm error code ENOENT
+npm error syscall open
+npm error path /home/hns13/VpsDeploy/KEMUDI-Sistem-Pemantauan-Kantuk-Pengemudi/backend/package.json
+npm error errno -2
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/hns13/VpsDeploy/KEMUDI-Sistem-Pemantauan-Kantuk-Pengemudi/backend/package.json'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /home/hns13/.npm/_logs/2026-06-02T02_27_55_152Z-debug-0.log
+npm warn Unknown cli config "--host". This will stop working in the next major version of npm.
+npm error code ENOENT
+npm error syscall open
+npm error path /home/hns13/VpsDeploy/KEMUDI-Sistem-Pemantauan-Kantuk-Pengemudi/backend/package.json
+npm error errno -2
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/hns13/VpsDeploy/KEMUDI-Sistem-Pemantauan-Kantuk-Pengemudi/backend/package.json'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /home/hns13/.npm/_logs/2026-06-02T02_28_57_132Z-debug-0.log
