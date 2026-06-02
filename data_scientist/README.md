@@ -19,13 +19,18 @@ Berdasarkan permasalahan tersebut, proyek KEMUDI dikembangkan untuk mengeksplora
 ## Business Understanding
 
 ### Business Questions
-
-1. Apakah kondisi mata terbuka dan tertutup dapat digunakan sebagai indikator awal dalam sistem deteksi kantuk pengemudi?
-2. Bagaimana karakteristik dan keseimbangan dataset yang digunakan?
-3. Apakah preprocessing citra mampu menghasilkan data yang siap digunakan oleh model klasifikasi?
-4. Seberapa baik performa model dalam mengklasifikasikan kondisi mata Open dan Closed?
-5. Threshold prediksi berapa yang paling optimal untuk digunakan?
-6. Apakah model memiliki latency yang cukup rendah untuk mendukung implementasi real-time?
+1. Apakah kondisi mata terbuka dan tertutup dapat digunakan sebagai indikator awal 
+dalam mendeteksi kantuk pengemudi?
+2. Bagaimana karakteristik dan keseimbangan dataset (open vs closed) memengaruhi 
+performa model? 
+3. Apakah feature engineering melalui preprocessing citra mampu menghasilkan 
+input gambar yang seragam dan siap digunakan untuk model klasifikasi? 
+4. Seberapa baik performa model dalam mengklasifikasikan kondisi mata berdasarkan 
+metrik evaluasi seperti accuracy, precision, recall, F1-score, dan confusion matrix? 
+5. Threshold prediksi berapa yang paling optimal untuk membedakan kondisi mata 
+Open dan Closed berdasarkan validation set?
+6. Apakah model memiliki latency yang cukup rendah untuk mendukung sistem 
+deteksi kantuk secara real-time? 
 
 ---
 
