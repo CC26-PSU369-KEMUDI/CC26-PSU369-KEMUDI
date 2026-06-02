@@ -224,8 +224,6 @@ https://web-production-f21ddd.up.railway.app/docs
 
 ## 2. Implementasi tf.GradientTape
 
-## 2. Implementasi tf.GradientTape
-
 Proyek ini mengimplementasikan **custom training loop** menggunakan TensorFlow `tf.GradientTape` untuk memberikan kontrol penuh terhadap proses training model.
 
 Implementasi dilakukan melalui fungsi:
