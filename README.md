@@ -4,13 +4,56 @@
 
 KEMUDI (Kendali Mengemudi untuk Deteksi Kantuk) merupakan proyek Capstone yang dikembangkan untuk membantu mendeteksi indikasi awal kantuk pengemudi menggunakan teknologi Artificial Intelligence dan Computer Vision.
 
-Proyek ini mengusung tema **Healthy Lives & Well-being** dengan tujuan meningkatkan keselamatan berkendara melalui sistem pemantauan kondisi mata pengemudi secara otomatis. Sistem dirancang untuk mendeteksi kondisi mata terbuka (*Open Eye*) dan tertutup (*Closed Eye*) sebagai indikator awal kantuk sehingga dapat memberikan peringatan sebelum terjadi risiko kecelakaan akibat kelelahan atau *microsleep*.
+Proyek ini mengusung tema **Healthy Lives & Well-Being** dengan tujuan meningkatkan keselamatan berkendara melalui sistem pemantauan kondisi mata pengemudi secara otomatis. Sistem dirancang untuk mendeteksi kondisi mata terbuka (*Open Eye*) dan tertutup (*Closed Eye*) sebagai indikator awal kantuk sehingga dapat memberikan peringatan sebelum terjadi risiko kecelakaan akibat kelelahan maupun *microsleep*.
+
+---
+
+# Latar Belakang
+
+Kecelakaan lalu lintas masih menjadi salah satu penyebab utama cedera dan kematian di berbagai negara. Salah satu faktor yang sering menjadi penyebab kecelakaan adalah menurunnya konsentrasi akibat kelelahan dan kantuk saat berkendara.
+
+Fenomena *microsleep*, yaitu kondisi ketika seseorang tertidur selama beberapa detik tanpa disadari, dapat menyebabkan hilangnya kendali kendaraan dalam waktu singkat. Meskipun durasinya sangat singkat, dampaknya dapat berakibat fatal.
+
+Berdasarkan permasalahan tersebut, tim mengembangkan KEMUDI sebagai sistem deteksi dini kantuk pengemudi berbasis Artificial Intelligence dan Computer Vision yang memanfaatkan kondisi mata sebagai indikator utama.
+
+---
+
+# Permasalahan yang Diangkat
+
+Permasalahan utama yang ingin diselesaikan dalam proyek ini adalah:
+
+* Sulitnya mendeteksi kondisi kantuk pengemudi secara dini.
+* Tingginya risiko kecelakaan akibat kelelahan dan microsleep.
+* Belum tersedianya solusi yang mudah diakses masyarakat luas tanpa memerlukan perangkat khusus yang mahal.
+* Perlunya sistem pemantauan yang dapat bekerja secara otomatis dan real-time.
+
+---
+
+# Solusi yang Dikembangkan
+
+KEMUDI memanfaatkan teknologi Computer Vision dan Deep Learning untuk mengidentifikasi kondisi mata pengemudi.
+
+Alur kerja sistem:
+
+1. Kamera menangkap wajah pengguna secara real-time.
+2. Sistem mendeteksi area mata pengguna.
+3. Model AI mengklasifikasikan kondisi mata menjadi Open atau Closed.
+4. Sistem menghitung durasi mata tertutup secara berkelanjutan.
+5. Jika terindikasi kantuk, sistem memberikan peringatan kepada pengguna.
+
+Keunggulan solusi:
+
+* Tidak memerlukan perangkat tambahan khusus.
+* Dapat menggunakan kamera bawaan laptop maupun smartphone.
+* Berbasis web sehingga mudah diakses.
+* Mendukung implementasi real-time.
+* Biaya implementasi relatif rendah.
 
 ---
 
 # Tim Pengembang
 
-Proyek KEMUDI dikembangkan melalui kolaborasi tiga Learning Path yang saling terintegrasi untuk menghasilkan sistem deteksi kantuk pengemudi berbasis Artificial Intelligence dan Computer Vision.
+Proyek KEMUDI dikembangkan melalui kolaborasi tiga Learning Path yang saling terintegrasi.
 
 ## 1. Data Scientist
 
@@ -19,8 +62,8 @@ Learning Path Data Scientist bertanggung jawab dalam mengolah data, melakukan an
 ### Tanggung Jawab
 
 * Mengidentifikasi permasalahan dan menentukan solusi yang akan dikembangkan.
-* Melakukan proses Data Wrangling yang mencakup Gathering Data, Assessing Data, dan Cleaning Data.
-* Mendefinisikan Business Questions yang dapat diukur.
+* Melakukan Data Wrangling (Gathering, Assessing, Cleaning Data).
+* Mendefinisikan Business Questions.
 * Melakukan Exploratory Data Analysis (EDA).
 * Membuat visualisasi data dan explanatory analysis.
 * Menyusun Data Dictionary.
@@ -42,49 +85,49 @@ Learning Path Data Scientist bertanggung jawab dalam mengolah data, melakukan an
 
 ## 2. AI Engineer
 
-Learning Path AI Engineer bertanggung jawab dalam membangun, melatih, mengevaluasi, dan mengoptimalkan model Artificial Intelligence yang digunakan untuk mendeteksi kondisi mata terbuka dan tertutup.
+Learning Path AI Engineer bertanggung jawab dalam membangun, melatih, mengevaluasi, dan mengoptimalkan model Artificial Intelligence.
 
 ### Tanggung Jawab
 
-* Mengembangkan model Deep Learning menggunakan TensorFlow Functional API atau Model Subclassing.
-* Menyesuaikan arsitektur model dengan kebutuhan bisnis dan karakteristik dataset.
-* Mengimplementasikan komponen kustom seperti Custom Layer, Custom Callback, atau Custom Loss Function.
-* Melatih dan mengevaluasi performa model.
-* Melakukan optimasi model agar siap digunakan pada lingkungan produksi.
+* Mengembangkan model Deep Learning menggunakan TensorFlow.
+* Menyesuaikan arsitektur model dengan kebutuhan bisnis.
+* Mengimplementasikan komponen kustom seperti Custom Callback, Custom Layer, atau Custom Loss Function.
+* Melatih dan mengevaluasi model.
+* Mengoptimalkan model agar siap digunakan pada lingkungan produksi.
 * Mengekspor model ke format TensorFlow SavedModel atau Keras.
-* Membuat pipeline inference untuk kebutuhan integrasi aplikasi.
+* Mengembangkan pipeline inference.
 
 ### Hasil yang Dihasilkan
 
 * Model klasifikasi kondisi mata Open dan Closed.
-* Model siap produksi dalam format TensorFlow.
-* Script inference model.
-* Dokumentasi pengembangan dan evaluasi model.
+* Model siap produksi.
+* Script inference.
+* Dokumentasi pelatihan dan evaluasi model.
 
 ---
 
 ## 3. Full-Stack Developer
 
-Learning Path Full-Stack Developer bertanggung jawab dalam membangun aplikasi web, REST API, serta mengintegrasikan model AI ke dalam sistem yang dapat digunakan oleh pengguna.
+Learning Path Full-Stack Developer bertanggung jawab dalam membangun aplikasi web serta mengintegrasikan model AI ke dalam sistem.
 
 ### Tanggung Jawab
 
-* Mengembangkan frontend aplikasi menggunakan React.
+* Mengembangkan frontend menggunakan React.
 * Menggunakan Vite sebagai module bundler.
-* Mengembangkan RESTful API menggunakan Express.
-* Mengimplementasikan komunikasi frontend dan backend menggunakan networking call.
+* Mengembangkan REST API menggunakan Express.
+* Mengimplementasikan komunikasi frontend dan backend.
 * Mengintegrasikan model AI ke dalam aplikasi.
-* Mengimplementasikan webcam untuk deteksi kantuk secara real-time.
+* Mengimplementasikan webcam menggunakan MediaDevices.getUserMedia().
 * Membuat mockup dan desain antarmuka aplikasi.
-* Mengembangkan tampilan yang responsif pada berbagai perangkat.
-* Melakukan deployment aplikasi ke layanan hosting.
+* Mengembangkan tampilan yang responsif.
+* Melakukan deployment aplikasi.
 
 ### Hasil yang Dihasilkan
 
 * Frontend aplikasi KEMUDI.
 * Backend dan REST API.
 * Integrasi webcam dan model AI.
-* Aplikasi web yang dapat digunakan secara real-time.
+* Aplikasi web siap digunakan secara real-time.
 
 ---
 
@@ -92,61 +135,11 @@ Learning Path Full-Stack Developer bertanggung jawab dalam membangun aplikasi we
 
 Ketiga Learning Path bekerja secara terintegrasi:
 
-1. Data Scientist menyiapkan data, insight, dashboard, dan hasil eksperimen.
-2. AI Engineer mengembangkan model klasifikasi berdasarkan data yang telah diproses.
-3. Full-Stack Developer mengintegrasikan model ke dalam aplikasi web sehingga dapat digunakan secara real-time oleh pengguna.
-
-Kolaborasi ketiga Learning Path menghasilkan sistem KEMUDI yang mampu mendukung deteksi dini kantuk pengemudi melalui teknologi Artificial Intelligence dan Computer Vision.
-
----
-
-# Permasalahan yang Diangkat
-
-Kantuk saat berkendara merupakan salah satu faktor yang meningkatkan risiko kecelakaan lalu lintas. Banyak pengemudi mengalami kelelahan atau microsleep tanpa menyadarinya sehingga berpotensi menyebabkan hilangnya konsentrasi selama beberapa detik.
-
-KEMUDI dikembangkan untuk membantu mendeteksi indikasi awal kantuk melalui pemantauan kondisi mata pengemudi menggunakan kamera perangkat dan model Artificial Intelligence.
-
----
-
-# Solusi yang Dikembangkan
-
-KEMUDI memanfaatkan teknologi Computer Vision dan Deep Learning untuk mengidentifikasi kondisi mata pengemudi.
-
-Alur sistem:
-
-1. Kamera menangkap wajah pengguna secara real-time.
-2. Sistem mendeteksi area mata.
-3. Model AI mengklasifikasikan kondisi mata menjadi Open atau Closed.
-4. Sistem menghitung durasi mata tertutup.
-5. Jika terindikasi kantuk, sistem memberikan peringatan kepada pengguna.
-
----
-
-# Struktur Repository
-
-```text
-CC26-PSU369-KEMUDI/
-│
-├── data_scientist/
-│   ├── app.py
-│   ├── requirements.txt
-│   ├── README.md
-│   ├── streamlit_assets/
-│   └── docs/
-│
-├── ai_engineer/
-│   ├── model/
-│   ├── notebooks/
-│   ├── inference/
-│   └── README.md
-│
-├── full_stack_developer/
-│   ├── frontend/
-│   ├── backend/
-│   └── README.md
-│
-└── README.md
-```
+1. Data Scientist menyiapkan data, analisis, dashboard, dan hasil eksperimen.
+2. AI Engineer membangun model klasifikasi berdasarkan dataset yang telah diproses.
+3. Full-Stack Developer mengintegrasikan model ke dalam aplikasi web.
+4. Sistem melakukan deteksi kondisi mata secara real-time melalui webcam.
+5. Hasil prediksi digunakan sebagai indikator awal kantuk pengemudi.
 
 ---
 
@@ -178,6 +171,34 @@ CC26-PSU369-KEMUDI/
 
 ---
 
+# Struktur Repository
+
+```text
+CC26-PSU369-KEMUDI/
+│
+├── data_scientist/
+│   ├── app.py
+│   ├── requirements.txt
+│   ├── README.md
+│   ├── streamlit_assets/
+│   └── docs/
+│
+├── ai_engineer/
+│   ├── model/
+│   ├── notebooks/
+│   ├── inference/
+│   └── README.md
+│
+├── full_stack_developer/
+│   ├── frontend/
+│   ├── backend/
+│   └── README.md
+│
+└── README.md
+```
+
+---
+
 # Dokumentasi Learning Path
 
 ## Data Scientist
@@ -186,31 +207,102 @@ Dashboard Streamlit:
 
 https://cc26-psu369-kemudi-data-scientist-ttoqnxqw5cvd2tcqkspafq.streamlit.app/
 
-Dokumentasi lengkap dapat dilihat pada folder:
+Dokumentasi lengkap tersedia pada folder:
 
 ```text
 data_scientist/
+```
+
+## AI Engineer
+
+Dokumentasi lengkap tersedia pada folder:
+
+```text
+ai_engineer/
+```
+
+## Full-Stack Developer
+
+Dokumentasi lengkap tersedia pada folder:
+
+```text
+full_stack_developer/
+```
+
+---
+
+# Cara Mereplikasi Proyek
+
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/KeisyaNazalia0108/CC26-PSU369-KEMUDI.git
+cd CC26-PSU369-KEMUDI
+```
+
+---
+
+## Data Scientist
+
+Masuk ke folder Data Scientist:
+
+```bash
+cd data_scientist
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Jalankan dashboard:
+
+```bash
+streamlit run app.py
+```
+
+Dashboard akan berjalan pada:
+
+```text
+http://localhost:8501
 ```
 
 ---
 
 ## AI Engineer
 
-Dokumentasi lengkap dapat dilihat pada folder:
+Dokumentasi lengkap tersedia pada folder:
 
 ```text
 ai_engineer/
 ```
 
+Bagian ini akan dilengkapi oleh tim AI Engineer, termasuk:
+
+* Training pipeline
+* Hyperparameter
+* Arsitektur model
+* Evaluasi model
+* Cara menjalankan inference
+
 ---
 
 ## Full-Stack Developer
 
-Dokumentasi lengkap dapat dilihat pada folder:
+Dokumentasi lengkap tersedia pada folder:
 
 ```text
 full_stack_developer/
 ```
+
+Bagian ini akan dilengkapi oleh tim Full-Stack Developer, termasuk:
+
+* Setup frontend
+* Setup backend
+* Environment variables
+* Integrasi API
+* Deployment aplikasi
 
 ---
 
@@ -219,10 +311,13 @@ full_stack_developer/
 Beberapa pengembangan yang dapat dilakukan pada versi berikutnya:
 
 * Menambahkan deteksi yawning (menguap) sebagai indikator tambahan kantuk.
-* Mengintegrasikan Eye Aspect Ratio (EAR) untuk meningkatkan akurasi deteksi.
-* Meningkatkan performa model pada kondisi pencahayaan rendah dan pengguna berkacamata.
-* Mengintegrasikan sistem dengan perangkat mobile agar dapat digunakan secara lebih luas.
-* Mengembangkan monitoring performa model secara real-time setelah sistem diimplementasikan.
+* Mengintegrasikan Eye Aspect Ratio (EAR).
+* Meningkatkan performa model pada kondisi low-light.
+* Menambahkan dukungan pengguna berkacamata.
+* Mengembangkan monitoring performa model secara real-time.
+* Menyediakan riwayat tingkat kantuk pengguna.
+* Mengembangkan aplikasi mobile berbasis Android maupun iOS.
+
 ---
 
 # Kesimpulan
