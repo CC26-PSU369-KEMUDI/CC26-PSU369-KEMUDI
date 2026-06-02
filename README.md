@@ -85,25 +85,109 @@ Learning Path Data Scientist bertanggung jawab dalam mengolah data, melakukan an
 
 ## 2. AI Engineer
 
-Learning Path AI Engineer bertanggung jawab dalam membangun, melatih, mengevaluasi, dan mengoptimalkan model Artificial Intelligence.
+Learning Path AI Engineer bertanggung jawab dalam membangun, melatih, mengevaluasi, mengoptimalkan, dan melakukan deployment model Artificial Intelligence yang digunakan untuk mendeteksi kondisi mata terbuka dan tertutup.
 
 ### Tanggung Jawab
 
-* Mengembangkan model Deep Learning menggunakan TensorFlow.
-* Menyesuaikan arsitektur model dengan kebutuhan bisnis.
-* Mengimplementasikan komponen kustom seperti Custom Callback, Custom Layer, atau Custom Loss Function.
-* Melatih dan mengevaluasi model.
-* Mengoptimalkan model agar siap digunakan pada lingkungan produksi.
-* Mengekspor model ke format TensorFlow SavedModel atau Keras.
-* Mengembangkan pipeline inference.
+- Mengembangkan model Deep Learning menggunakan TensorFlow Functional API atau Model Subclassing.
+- Menyesuaikan arsitektur model dengan kebutuhan bisnis dan karakteristik dataset.
+- Mengimplementasikan komponen custom seperti Custom Layer, Custom Callback, atau Custom Loss Function.
+- Melatih dan mengevaluasi performa model.
+- Melakukan optimasi model agar siap digunakan pada lingkungan produksi.
+- Mengekspor model ke format TensorFlow SavedModel atau Keras.
+- Membuat pipeline inference untuk kebutuhan integrasi aplikasi.
+- Mengembangkan dan melakukan deployment REST API berbasis FastAPI untuk integrasi dengan aplikasi frontend.
 
 ### Hasil yang Dihasilkan
 
-* Model klasifikasi kondisi mata Open dan Closed.
-* Model siap produksi.
-* Script inference.
-* Dokumentasi pelatihan dan evaluasi model.
+- Notebook pelatihan (*training notebook*) yang berisi seluruh proses pengembangan, pelatihan, dan evaluasi model Deep Learning.
+- Dataset hasil *preprocessing* yang telah dibagi menjadi data **Train**, **Validation**, dan **Test** oleh Learning Path Data Scientist.
+- Model klasifikasi kondisi mata **Open** dan **Closed** dalam format **Keras (.keras)**.
+- Hasil evaluasi model beserta metrik performa pada data validasi dan data pengujian.
+- Folder log pelatihan untuk kebutuhan monitoring dan visualisasi proses training menggunakan TensorBoard.
+- REST API mandiri berbasis FastAPI yang telah dideploy dan dapat diakses melalui tautan berikut:
 
+```text
+https://your-api-url.com
+```
+
+- Dokumentasi pengembangan, pelatihan, evaluasi, deployment, dan integrasi model.
+
+### TensorBoard
+
+Folder `logs/fit/` berisi log yang dihasilkan selama proses pelatihan model. Log tersebut dapat divisualisasikan menggunakan TensorBoard untuk memantau performa model selama training.
+
+#### Menjalankan TensorBoard
+
+1. Pastikan TensorBoard telah terinstal.
+
+```bash
+pip install tensorboard
+```
+
+2. Buka terminal pada root direktori proyek.
+
+3. Jalankan perintah berikut:
+
+```bash
+tensorboard --logdir logs/fit
+```
+
+4. Setelah TensorBoard berjalan, buka browser dan akses:
+
+```text
+http://localhost:6006
+```
+
+#### Informasi yang Dapat Dilihat
+
+TensorBoard menyediakan visualisasi berbagai metrik pelatihan model, seperti:
+
+- Training Loss
+- Validation Loss
+- Training Accuracy
+- Validation Accuracy
+- Performa model pada setiap epoch
+- Grafik dan metrik lain yang dicatat selama proses training
+
+### Reproduksi Training
+
+Untuk melatih ulang model:
+
+1. Gunakan dataset hasil *preprocessing* yang telah disiapkan oleh Learning Path Data Scientist.
+2. Pastikan dataset telah dibagi menjadi:
+   - Train Set
+   - Validation Set
+   - Test Set
+3. Jalankan notebook pelatihan yang tersedia pada folder proyek.
+4. Setelah proses pelatihan selesai:
+   - Model akan tersimpan dalam format `.keras`.
+   - Log pelatihan akan tersimpan pada folder `logs/fit/`.
+   - Log dapat divisualisasikan menggunakan TensorBoard sesuai langkah yang telah dijelaskan sebelumnya.
+
+### REST API
+
+Model yang telah dilatih diintegrasikan ke dalam layanan REST API berbasis FastAPI sehingga dapat digunakan oleh aplikasi frontend maupun sistem lain.
+
+#### Base URL
+
+```text
+https://your-api-url.com
+```
+
+#### Dokumentasi API
+
+Swagger UI:
+
+```text
+https://your-api-url.com/docs
+```
+
+ReDoc:
+
+```text
+https://your-api-url.com/redoc
+```
 ---
 
 ## 3. Full-Stack Developer
