@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+tensorflow-cpu==2.15.0
+opencv-python-headless
+numpy<2
+sqlalchemy
+python-multipart
+google-generativeai
+pydantic
+h5py
