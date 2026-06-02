@@ -131,19 +131,11 @@ Format ini memungkinkan model langsung digunakan pada proses inferensi maupun de
 
 ## 4. Implementasi Inference
 
-Kode inferensi model diimplementasikan pada:
+Kode inferensi model sederhana diimplementasikan pada:
 
 ```text
-api_deployment/app.py
+notebook model.ipynb
 ```
-
-Tahapan inferensi:
-
-1. Menerima gambar mata dari pengguna
-2. Melakukan preprocessing gambar
-3. Menjalankan prediksi menggunakan model
-4. Menghasilkan probabilitas prediksi
-5. Menghasilkan rekomendasi berbasis Generative AI
 
 ---
 
@@ -153,33 +145,72 @@ Tahapan inferensi:
 
 Model telah diintegrasikan ke dalam REST API berbasis FastAPI sehingga dapat diakses oleh aplikasi frontend maupun backend.
 
-### Endpoint Utama
+### Deployment API
 
-#### Cek Status API
+API telah dideploy menggunakan Railway dan dapat diakses melalui:
 
-```http
-GET /
+**Base URL**
+
+```text
+https://web-production-f21ddd.up.railway.app
 ```
 
-#### Prediksi Kantuk
+**Swagger Documentation**
+
+```text
+https://web-production-f21ddd.up.railway.app/docs
+```
+
+### Daftar Endpoint
+
+| Method | Endpoint | Deskripsi |
+|----------|----------|------------|
+| GET | `/` | Menampilkan informasi API |
+| GET | `/health` | Memeriksa status layanan API |
+| POST | `/api/v1/predict` | Melakukan prediksi kondisi mata |
+| POST | `/api/v1/predict-with-advice` | Melakukan prediksi dan menghasilkan rekomendasi menggunakan Gemini AI |
+| GET | `/api/v1/history` | Menampilkan riwayat prediksi |
+| GET | `/api/v1/stats` | Menampilkan statistik penggunaan API |
+
+### Endpoint Utama
+
+#### Prediksi Kondisi Mata
+
+```http
+POST /api/v1/predict
+```
+
+Input:
+- File gambar JPG
+- File gambar PNG
+
+Output:
+
+```json
+{
+  "prediction": "drowsy",
+  "confidence": 0.98
+}
+```
+
+#### Prediksi dengan Rekomendasi AI
 
 ```http
 POST /api/v1/predict-with-advice
 ```
 
-### Input
+Input:
+- File gambar JPG
+- File gambar PNG
 
-* File gambar JPG
-* File gambar PNG
+### Bukti Implementasi
 
-### Contoh Output
+- URL deployment tersedia dan dapat diakses secara publik.
+- Dokumentasi Swagger tersedia pada endpoint `/docs`.
+- Contoh pengujian API dan respons tersedia pada folder:
 
-```json
-{
-  "prediction": "drowsy",
-  "confidence": 0.98,
-  "advice": "Disarankan untuk beristirahat sebelum melanjutkan perjalanan."
-}
+```text
+url api testing/
 ```
 
 ### Deployment API
@@ -202,18 +233,28 @@ https://web-production-f21ddd.up.railway.app/docs
 
 ## 2. Implementasi tf.GradientTape
 
-Training model dilakukan menggunakan custom training loop berbasis:
+## 2. Implementasi tf.GradientTape
 
-```python
-tf.GradientTape
-```
+Proyek ini mengimplementasikan **custom training loop** menggunakan TensorFlow `tf.GradientTape` untuk memberikan kontrol penuh terhadap proses training model.
 
-Implementasi ini memberikan kontrol penuh terhadap:
+Implementasi dilakukan melalui fungsi:
 
-* Forward propagation
-* Perhitungan loss
-* Backpropagation
-* Update parameter model
+- `train_step()`
+- `val_step()`
+
+Pada setiap iterasi training, proses yang dilakukan meliputi:
+
+1. Data augmentation pada batch input.
+2. Forward propagation untuk menghasilkan prediksi.
+3. Perhitungan loss.
+4. Perhitungan gradien menggunakan `tf.GradientTape`.
+5. Update parameter model menggunakan `optimizer.apply_gradients()`.
+
+Implementasi ini memenuhi checklist:
+
+> Mengimplementasikan training dan evaluation loop custom secara penuh dari awal menggunakan tf.GradientTape.
+
+Keuntungan pendekatan ini adalah memberikan fleksibilitas lebih tinggi dibandingkan metode `model.fit()` standar, sehingga proses training dapat dikustomisasi sesuai kebutuhan proyek.
 
 ---
 
@@ -221,12 +262,19 @@ Implementasi ini memberikan kontrol penuh terhadap:
 
 Proyek mengintegrasikan Generative AI sebagai fitur tambahan untuk menghasilkan rekomendasi keselamatan berdasarkan hasil prediksi model.
 
-### Contoh Output
+### Contoh Output 
 
 ```json
 {
-  "prediction": "drowsy",
-  "advice": "Anda terindikasi mengantuk. Disarankan untuk berhenti sejenak dan beristirahat sebelum melanjutkan perjalanan."
+  "id": "ff0ea0d2-2a05-442e-bcc2-f6ce63214bea",
+  "filename": "Screenshot 2026-06-02 at 21.49.06.png",
+  "prediction": "Open",
+  "confidence": 0.9997,
+  "open_probability": 0.9997,
+  "closed_probability": 0.0003,
+  "eye_detected": true,
+  "created_at": "2026-06-02T14:49:23.549867",
+  "ai_advice": "Luar biasa, mata Anda tetap terbuka lebar dan fokus dengan tingkat keyakinan yang sangat tinggi. Pertahankan semangat ini untuk menyelesaikan seluruh aktivitas produktif Anda hari ini. Tetap fokus dan tunjukkan performa terbaik Anda!"
 }
 ```
 
@@ -280,20 +328,7 @@ Visualisasi lengkap tersedia pada folder **TensorBoard Results**.
 
 ## 1. Install Dependency
 
-```bash
-pip install tensorflow
-pip install numpy
-pip install pandas
-pip install matplotlib
-pip install scikit-learn
-pip install tensorboard
-```
-
 ## 2. Jalankan Jupyter Notebook
-
-```bash
-jupyter notebook
-```
 
 ## 3. Buka Notebook
 
@@ -355,19 +390,6 @@ http://127.0.0.1:8000/docs
 
 ---
 
-### RestAPI Deployment
-
-API berhasil dideploy menggunakan Railway dan dapat diakses secara publik melalui:
-
-- Base URL: https://web-production-f21ddd.up.railway.app
-- Swagger Documentation: https://web-production-f21ddd.up.railway.app/docs
-
-Contoh hasil pengujian endpoint tersedia pada folder:
-
-```text
-url api testing/
-```
-
 # Pemetaan Checklist AI Engineering
 
 | Checklist                               | Status |
@@ -388,5 +410,5 @@ url api testing/
 # Kontributor
 
 AI Engineering Team
-Nicke Damayanti Safitri (CACC008D6X2616)
-Rifka Alya Damayanti (CACC008D6X1433)
+- Nicke Damayanti Safitri (CACC008D6X2616)
+- Rifka Alya Damayanti (CACC008D6X1433)
