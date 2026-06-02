@@ -69,6 +69,12 @@ Model dikembangkan menggunakan TensorFlow Keras Functional API untuk melakukan k
 
 Model dilatih menggunakan dataset citra mata yang telah diproses dan dibagi menjadi data training, validation, dan testing.
 
+Notebook pelatihan model tersedia pada file:
+
+```text
+notebook model.ipynb
+```
+
 ---
 
 ## 2. Implementasi Komponen Kustom
