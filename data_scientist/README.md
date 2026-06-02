@@ -218,6 +218,8 @@ Data Scientist/
 │
 └── docs/
     └── screenshots/
+    └── Laporan_Teknis_Komprehensif_CC26-PSU369/
+    └── Notebook_Lengkap_Data_Scientist/
 ```
 
 ---
