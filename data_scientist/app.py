@@ -475,7 +475,7 @@ if menu == "Project Overview":
     section_header("02", "Business Questions")
     bqs = [
         ("BQ 01", "Apakah kondisi mata terbuka dan tertutup dapat digunakan sebagai indikator awal dalam sistem deteksi kantuk pengemudi?"),
-        ("BQ 02", "Bagaimana karakteristik dan keseimbangan dataset Open dan Closed yang digunakan dalam pengembangan model?"),
+        ("BQ 02", "Bagaimana karakteristik dan keseimbangan dataset (open vs closed) memengaruhi performa model? "),
         ("BQ 03", "Apakah feature engineering melalui preprocessing citra mampu menghasilkan input gambar yang seragam dan siap digunakan untuk model klasifikasi?"),
         ("BQ 04", "Seberapa baik performa model dalam mengklasifikasikan kondisi mata Open dan Closed berdasarkan accuracy, precision, recall, F1-score, dan confusion matrix?"),
         ("BQ 05", "Threshold prediksi berapa yang paling optimal untuk membedakan kondisi mata Open dan Closed berdasarkan validation set?"),
