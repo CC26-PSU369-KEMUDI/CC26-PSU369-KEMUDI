@@ -184,15 +184,6 @@ Input:
 - File gambar JPG
 - File gambar PNG
 
-Output:
-
-```json
-{
-  "prediction": "drowsy",
-  "confidence": 0.98
-}
-```
-
 #### Prediksi dengan Rekomendasi AI
 
 ```http
