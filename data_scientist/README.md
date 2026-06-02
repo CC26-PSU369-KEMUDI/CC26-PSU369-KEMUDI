@@ -218,6 +218,12 @@ Data Scientist/
 │
 └── docs/
     └── screenshots/
+        ├── overview.png
+        ├── data_insight.png
+        ├── feature_engineering.png
+        ├── model_evaluation.png
+        ├── ab_testing_dan_latency.png
+        └── conclusion.png
     └── Laporan_Teknis_Komprehensif_CC26-PSU369/
     └── Notebook_Lengkap_Data_Scientist/
 ```
