@@ -256,7 +256,7 @@ Proyek mengintegrasikan Generative AI sebagai fitur tambahan untuk menghasilkan 
 ```json
 {
   "id": "ff0ea0d2-2a05-442e-bcc2-f6ce63214bea",
-  "filename": "Screenshot 2026-06-02 at 21.49.06.png",
+  "filename": "eye.png",
   "prediction": "Open",
   "confidence": 0.9997,
   "open_probability": 0.9997,
