@@ -14,7 +14,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-ASSET_DIR = Path("streamlit_assets")
+ASSET_DIR = Path("data_scientist/streamlit_assets")
 
 # =========================
 # GLOBAL CSS STYLING
