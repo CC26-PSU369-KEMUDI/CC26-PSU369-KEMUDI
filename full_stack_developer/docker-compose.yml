@@ -1,0 +1,50 @@
+services:
+  # database:
+  #   image: postgres:17
+  #   container_name: sistem-kemudi-database
+  #   expose: 
+  #     - "5432"
+  #   environment: 
+  #     - POSTGRES_USER=kemudi
+  #     - POSTGRES_PASSWORD=p0o9i8u7y6
+  #     - POSTGRES_DB=kemudi_db
+  #   networks:
+  #     - sistem-kemudi-network
+  #   volumes:
+  #     - postgres_kemudi:/var/lib/postgresql/data
+  #     - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U kemudi -d kemudi_db"]
+  #     interval: 5s
+  #     timeout: 5s
+  #     retries: 5
+    
+  frontend: 
+    build: ./frontend/drowsiness-app
+    container_name: sistem-kemudi-frontend
+    ports: 
+      - "7715:4173"
+    networks:
+      - sistem-kemudi-network
+
+  backend:
+    build: ./backend
+    container_name: sistem-kemudi-backend
+    ports:
+      - "7710:7710"
+    environment:
+      - FRONTEND_URL=kemudi.oriontacita.my.id
+      - BACKEND_URL=backend-kemudi.oriontacita.my.id
+      - DATABASE_URL=postgresql://default:p0o9i8u7y6@postgresql.oriontacita.my.id:4450/default
+    networks:
+      - sistem-kemudi-network
+    # depends_on:
+    #   database:
+    #     condition: service_healthy
+
+networks:
+  sistem-kemudi-network:
+    driver: bridge
+
+# volumes:
+#   postgres_kemudi:
