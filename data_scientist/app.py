@@ -4,6 +4,43 @@ import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
 
+# ========== KODE DEBUG (TAMBAHKAN INI) ==========
+st.write("### 🔍 DEBUG INFO - JANGAN PANIK, INI HANYA CEK FILE")
+
+# Cek current working directory
+st.write(f"**Current Directory:** `{os.getcwd()}`")
+
+# Cek isi folder saat ini
+st.write("**Isi folder saat ini (root repository):**")
+try:
+    for item in os.listdir("."):
+        st.write(f"- {item}")
+except Exception as e:
+    st.write(f"Error: {e}")
+
+# Cek folder streamlit_assets
+asset_path = Path("streamlit_assets")
+st.write(f"**Folder 'streamlit_assets' exists?** `{asset_path.exists()}`")
+
+if asset_path.exists():
+    st.write("**Isi folder streamlit_assets:**")
+    for item in asset_path.iterdir():
+        st.write(f"- {item.name}")
+else:
+    st.error("❌ FOLDER 'streamlit_assets' TIDAK DITEMUKAN!")
+
+    # Coba cek apakah ada di parent folder
+    parent_asset = Path("../streamlit_assets")
+    st.write(f"Cek di parent folder: `{parent_asset.exists()}`")
+    if parent_asset.exists():
+        st.write("**Isi folder streamlit_assets (di parent):**")
+        for item in parent_asset.iterdir():
+            st.write(f"- {item.name}")
+
+st.write("### 🔍 END DEBUG")
+st.markdown("---")
+# ========== AKHIR KODE DEBUG ==========
+
 # =========================
 # PAGE CONFIG
 # =========================
