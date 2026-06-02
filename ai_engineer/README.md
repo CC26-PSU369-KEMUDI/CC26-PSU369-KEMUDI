@@ -73,16 +73,41 @@ Model dilatih menggunakan dataset citra mata yang telah diproses dan dibagi menj
 
 ## 2. Implementasi Komponen Kustom
 
-Proyek ini mengimplementasikan komponen kustom dalam proses training model.
+Proyek ini mengimplementasikan komponen kustom berupa **Custom Callback** pada proses training model.
 
-### Custom Callback
+### Custom Logger Callback
 
-Digunakan untuk:
+Callback dikembangkan dengan melakukan subclass terhadap:
 
-* Monitoring performa model
-* Pengaturan learning rate
-* Early stopping
-* Penyimpanan model terbaik
+```python
+tf.keras.callbacks.Callback
+```
+
+Tujuan callback ini adalah untuk menampilkan ringkasan metrik training pada setiap akhir epoch secara otomatis.
+
+Metrik yang dicatat meliputi:
+
+- Training Loss
+- Training Accuracy
+- Validation Loss
+- Validation Accuracy
+
+Implementasi callback:
+
+```python
+class CustomLogger(tf.keras.callbacks.Callback):
+    def on_epoch_end(self, epoch, logs=None):
+        logs = logs or {}
+        print(
+            f"Epoch {epoch+1:3d} | "
+            f"Loss: {logs.get('loss', 0):.4f} | "
+            f"Acc: {logs.get('accuracy', 0)*100:.2f}% | "
+            f"Val Loss: {logs.get('val_loss', 0):.4f} | "
+            f"Val Acc: {logs.get('val_accuracy', 0)*100:.2f}%"
+        )
+```
+
+Callback ini membantu proses monitoring performa model selama training tanpa perlu melihat log TensorBoard secara langsung.
 
 ---
 
