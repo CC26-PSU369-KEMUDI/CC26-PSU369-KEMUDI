@@ -20,8 +20,6 @@ Berdasarkan permasalahan tersebut, tim mengembangkan KEMUDI sebagai sistem detek
 
 # Permasalahan yang Diangkat
 
-Permasalahan utama yang ingin diselesaikan dalam proyek ini adalah:
-
 * Sulitnya mendeteksi kondisi kantuk pengemudi secara dini.
 * Tingginya risiko kecelakaan akibat kelelahan dan microsleep.
 * Belum tersedianya solusi yang mudah diakses masyarakat luas tanpa memerlukan perangkat khusus yang mahal.
@@ -41,106 +39,152 @@ Alur kerja sistem:
 4. Sistem menghitung durasi mata tertutup secara berkelanjutan.
 5. Jika terindikasi kantuk, sistem memberikan peringatan kepada pengguna.
 
-Keunggulan solusi:
+---
 
-* Tidak memerlukan perangkat tambahan khusus.
-* Dapat menggunakan kamera bawaan laptop maupun smartphone.
-* Berbasis web sehingga mudah diakses.
-* Mendukung implementasi real-time.
-* Biaya implementasi relatif rendah.
+# Tautan Model ML
+
+Model AI yang digunakan dapat diunduh melalui tautan berikut:
+
+**[Download eye_model_22mei.keras (Google Drive)](https://drive.google.com/file/d/1zBbghewFnN1MpiwN7oHsJB3gthOHTmdC/view?usp=drive_link)**
 
 ---
 
-# Tim Pengembang
+# Petunjuk Setup Environment
 
-Proyek KEMUDI dikembangkan melalui kolaborasi tiga Learning Path yang saling terintegrasi.
+## Prasyarat
 
-## 1. Data Scientist
+Pastikan perangkat telah terinstal:
+- Python 3.9 atau lebih baru
+- Node.js 18 atau lebih baru
+- npm atau yarn
+- Git
 
-Learning Path Data Scientist bertanggung jawab dalam mengolah data, melakukan analisis, serta menghasilkan insight yang menjadi dasar pengembangan model Artificial Intelligence.
+## Clone Repository
 
-### Tanggung Jawab
-
-* Mengidentifikasi permasalahan dan menentukan solusi yang akan dikembangkan.
-* Melakukan Data Wrangling (Gathering, Assessing, Cleaning Data).
-* Mendefinisikan Business Questions.
-* Melakukan Exploratory Data Analysis (EDA).
-* Membuat visualisasi data dan explanatory analysis.
-* Menyusun Data Dictionary.
-* Melakukan Feature Engineering.
-* Mengimplementasikan A/B Testing menggunakan Python.
-* Mengembangkan dashboard interaktif menggunakan Streamlit.
-* Melakukan deployment dashboard ke Streamlit Cloud.
-* Menyusun laporan teknis proyek.
-
-### Hasil yang Dihasilkan
-
-* Dataset siap digunakan oleh model AI.
-* Insight dan hasil analisis data.
-* Dashboard interaktif Data Science.
-* Hasil A/B Testing dan Latency Testing.
-* Dokumentasi teknis proyek.
+```bash
+git clone https://github.com/KeisyaNazalia0108/CC26-PSU369-KEMUDI.git
+cd CC26-PSU369-KEMUDI
+```
 
 ---
 
-## 2. AI Engineer
+## Setup Data Scientist
 
-Learning Path AI Engineer bertanggung jawab dalam membangun, melatih, mengevaluasi, mengoptimalkan, dan melakukan deployment model Artificial Intelligence yang digunakan untuk mendeteksi kondisi mata terbuka dan tertutup.
-
-### Tanggung Jawab
-
-- Mengembangkan model Deep Learning menggunakan TensorFlow Functional API atau Model Subclassing.
-- Menyesuaikan arsitektur model dengan kebutuhan bisnis dan karakteristik dataset.
-- Mengimplementasikan komponen custom seperti Custom Layer, Custom Callback, atau Custom Loss Function.
-- Melatih dan mengevaluasi performa model.
-- Melakukan optimasi model agar siap digunakan pada lingkungan produksi.
-- Mengekspor model ke format TensorFlow SavedModel atau Keras.
-- Membuat pipeline inference untuk kebutuhan integrasi aplikasi.
-- Mengembangkan dan melakukan deployment REST API berbasis FastAPI untuk integrasi dengan aplikasi frontend.
-
-### Hasil yang Dihasilkan
-
-- Notebook pelatihan (*training notebook*) yang berisi seluruh proses pengembangan, pelatihan, dan evaluasi model Deep Learning.
-- Dataset hasil *preprocessing* yang telah dibagi menjadi data **Train**, **Validation**, dan **Test** oleh Learning Path Data Scientist.
-- Model klasifikasi kondisi mata **Open** dan **Closed** dalam format **Keras (.keras)**.
-- Hasil evaluasi model beserta metrik performa pada data validasi dan data pengujian.
-- Folder log pelatihan untuk kebutuhan monitoring dan visualisasi proses training menggunakan TensorBoard.
-- REST API mandiri berbasis FastAPI yang telah dideploy dan dapat diakses melalui tautan berikut: https://web-production-f21ddd.up.railway.app/docs
-
-## 3. Full-Stack Developer
-
-Learning Path Full-Stack Developer bertanggung jawab dalam membangun aplikasi web serta mengintegrasikan model AI ke dalam sistem.
-
-### Tanggung Jawab
-
-* Mengembangkan frontend menggunakan React.
-* Menggunakan Vite sebagai module bundler.
-* Mengembangkan REST API menggunakan Express.
-* Mengimplementasikan komunikasi frontend dan backend.
-* Mengintegrasikan model AI ke dalam aplikasi.
-* Mengimplementasikan webcam menggunakan MediaDevices.getUserMedia().
-* Membuat mockup dan desain antarmuka aplikasi.
-* Mengembangkan tampilan yang responsif.
-* Melakukan deployment aplikasi.
-
-### Hasil yang Dihasilkan
-
-* Frontend aplikasi KEMUDI.
-* Backend dan REST API.
-* Integrasi webcam dan model AI.
-* Aplikasi web siap digunakan secara real-time.
+```bash
+cd data_scientist
+pip install -r requirements.txt
+```
 
 ---
 
-# Integrasi Antar Learning Path
+## Setup AI Engineer
 
-Ketiga Learning Path bekerja secara terintegrasi:
+```bash
+cd ai_engineer/api_deployment
+pip install -r requirements.txt
+```
 
-1. Data Scientist menyiapkan data, analisis, dashboard, dan hasil eksperimen.
-2. AI Engineer membangun model klasifikasi berdasarkan dataset yang telah diproses.
-3. Full-Stack Developer mengintegrasikan model ke dalam aplikasi web.
-4. Sistem melakukan deteksi kondisi mata secara real-time melalui webcam.
-5. Hasil prediksi digunakan sebagai indikator awal kantuk pengemudi.
+Buat file `.env` di dalam folder `api_deployment/`:
+
+```bash
+GEMINI_API_KEY=your_gemini_api_key_here
+```
+
+Contoh template tersedia pada file `.env.example`.
+
+---
+
+## Setup Full-Stack Developer
+
+### Frontend
+
+```bash
+cd full_stack_developer/frontend/drowsiness-app
+npm install
+```
+
+### Backend
+
+```bash
+cd full_stack_developer/backend
+npm install
+```
+
+Buat file `.env` di folder backend sesuai template yang tersedia.
+
+---
+
+# Cara Menjalankan Aplikasi
+
+## Data Scientist — Dashboard Streamlit
+
+```bash
+cd data_scientist
+streamlit run app.py
+```
+
+Dashboard akan berjalan pada:
+
+```
+http://localhost:8501
+```
+
+Dashboard yang sudah dideploy:
+
+```
+https://cc26-psu369-kemudi-data-scientist-ttoqnxqw5cvd2tcqkspafq.streamlit.app/
+```
+
+---
+
+## AI Engineer — REST API
+
+```bash
+cd ai_engineer/api_deployment
+uvicorn app:app --reload
+```
+
+API akan berjalan pada:
+
+```
+http://127.0.0.1:8000
+```
+
+Swagger Documentation:
+
+```
+http://127.0.0.1:8000/docs
+```
+
+API yang sudah dideploy:
+
+```
+https://web-production-f21ddd.up.railway.app/docs
+```
+
+---
+
+## Full-Stack Developer — Aplikasi Web
+
+### Jalankan Backend
+
+```bash
+cd full_stack_developer/backend
+npm run dev
+```
+
+### Jalankan Frontend
+
+```bash
+cd full_stack_developer/frontend/drowsiness-app
+npm run dev
+```
+
+Aplikasi akan berjalan pada:
+
+```
+http://localhost:5173
+```
 
 ---
 
@@ -148,27 +192,15 @@ Ketiga Learning Path bekerja secara terintegrasi:
 
 ## Data Science
 
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Streamlit
+* Python, Pandas, NumPy, Matplotlib, Streamlit
 
 ## Artificial Intelligence
 
-* TensorFlow
-* Keras
-* OpenCV
-* Scikit-Learn
+* TensorFlow, Keras, OpenCV, Scikit-Learn, FastAPI
 
 ## Full-Stack Development
 
-* React
-* Vite
-* Express
-* JavaScript
-* REST API
-* MediaDevices.getUserMedia()
+* React, Vite, Express, JavaScript, REST API
 
 ---
 
@@ -185,14 +217,19 @@ CC26-PSU369-KEMUDI/
 │   └── docs/
 │
 ├── ai_engineer/
-│   ├── model/
-│   ├── notebooks/
-│   ├── inference/
+│   ├── TensorBoard Results/
+│   ├── api_deployment/
+│   ├── logs/
+│   ├── url api testing/
+│   ├── notebook model.ipynb
+│   ├── eye_model_22mei.keras
 │   └── README.md
 │
 ├── full_stack_developer/
 │   ├── frontend/
 │   ├── backend/
+│   ├── dataset/
+│   ├── docs/
 │   └── README.md
 │
 └── README.md
@@ -200,129 +237,32 @@ CC26-PSU369-KEMUDI/
 
 ---
 
-# Dokumentasi Learning Path
+# Tim Pengembang
 
 ## Data Scientist
-
-Dashboard Streamlit:
-
-https://cc26-psu369-kemudi-data-scientist-ttoqnxqw5cvd2tcqkspafq.streamlit.app/
-
-Dokumentasi lengkap tersedia pada folder:
-
-```text
-data_scientist/
-```
+Bertanggung jawab dalam pengolahan data, analisis, dan dashboard interaktif.
 
 ## AI Engineer
+- Nicke Damayanti Safitri (CACC008D6X2616)
+- Rifka Alya Damayanti (CACC008D6X1433)
 
-Dokumentasi lengkap tersedia pada folder:
-
-```text
-ai_engineer/
-```
+Bertanggung jawab dalam pengembangan model Deep Learning, training, evaluasi, dan deployment REST API.
 
 ## Full-Stack Developer
-
-Dokumentasi lengkap tersedia pada folder:
-
-```text
-full_stack_developer/
-```
-
----
-
-# Cara Mereplikasi Proyek
-
-## 1. Clone Repository
-
-```bash
-git clone https://github.com/KeisyaNazalia0108/CC26-PSU369-KEMUDI.git
-cd CC26-PSU369-KEMUDI
-```
-
----
-
-## Data Scientist
-
-Masuk ke folder Data Scientist:
-
-```bash
-cd data_scientist
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Jalankan dashboard:
-
-```bash
-streamlit run app.py
-```
-
-Dashboard akan berjalan pada:
-
-```text
-http://localhost:8501
-```
-
----
-
-## AI Engineer
-
-Dokumentasi lengkap tersedia pada folder:
-
-```text
-ai_engineer/
-```
-
-Bagian ini akan dilengkapi oleh tim AI Engineer, termasuk:
-
-* Training pipeline
-* Hyperparameter
-* Arsitektur model
-* Evaluasi model
-* Cara menjalankan inference
-
----
-
-## Full-Stack Developer
-
-Dokumentasi lengkap tersedia pada folder:
-
-```text
-full_stack_developer/
-```
-
-Bagian ini akan dilengkapi oleh tim Full-Stack Developer, termasuk:
-
-* Setup frontend
-* Setup backend
-* Environment variables
-* Integrasi API
-* Deployment aplikasi
+Bertanggung jawab dalam pengembangan aplikasi web dan integrasi model AI.
 
 ---
 
 # Future Development
 
-Beberapa pengembangan yang dapat dilakukan pada versi berikutnya:
-
-* Menambahkan deteksi yawning (menguap) sebagai indikator tambahan kantuk.
+* Menambahkan deteksi yawning sebagai indikator tambahan kantuk.
 * Mengintegrasikan Eye Aspect Ratio (EAR).
 * Meningkatkan performa model pada kondisi low-light.
 * Menambahkan dukungan pengguna berkacamata.
-* Mengembangkan monitoring performa model secara real-time.
-* Menyediakan riwayat tingkat kantuk pengguna.
 * Mengembangkan aplikasi mobile berbasis Android maupun iOS.
 
 ---
 
 # Kesimpulan
 
-KEMUDI berhasil mengintegrasikan proses Data Science, Artificial Intelligence, dan Full-Stack Development untuk membangun sistem pemantauan kantuk pengemudi berbasis Computer Vision.
-
-Melalui analisis kondisi mata terbuka dan tertutup, sistem mampu mendukung deteksi dini kantuk pengemudi dan memiliki potensi untuk meningkatkan keselamatan berkendara pada implementasi dunia nyata.
+KEMUDI berhasil mengintegrasikan proses Data Science, Artificial Intelligence, dan Full-Stack Development untuk membangun sistem pemantauan kantuk pengemudi berbasis Computer Vision yang dapat mendukung deteksi dini kantuk dan meningkatkan keselamatan berkendara.
