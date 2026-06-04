@@ -241,15 +241,18 @@ CC26-PSU369-KEMUDI/
 
 ## Data Scientist
 Bertanggung jawab dalam pengolahan data, analisis, dan dashboard interaktif.
+- Artika Sari Dewanti (CDCC008D6X1052)
+- Keisya Nazalia Azally (CDCC008D6X1397)
 
 ## AI Engineer
+Bertanggung jawab dalam pengembangan model Deep Learning, training, evaluasi, dan deployment REST API.
 - Nicke Damayanti Safitri (CACC008D6X2616)
 - Rifka Alya Damayanti (CACC008D6X1433)
 
-Bertanggung jawab dalam pengembangan model Deep Learning, training, evaluasi, dan deployment REST API.
-
 ## Full-Stack Developer
 Bertanggung jawab dalam pengembangan aplikasi web dan integrasi model AI.
+- Agnes Vika Artamevia (CFCC276D6X1312)
+- Naysilla Salsa Putri (CFCC276D6X2026)
 
 ---
 
